@@ -3,8 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<jsp:include page="includes/header.jsp" />
-
 <h3>글수정화면 modify_board.jsp</h3>
 
   <!-- 수정하는 기능 - modifyBoard.do -->
@@ -44,5 +42,3 @@
 	    </tr>
 	</table>
   </form>
-
-<jsp:include page="includes/footer.jsp" />

@@ -34,14 +34,14 @@ public class ModifyFormControl implements Control {
 			req.setAttribute("page", page);//보던 페이지로 돌아오기 기능을 위해 추가
 
 			// 요청재지정, 이 페이지의 정보로 보여줌 (정보를 보여줌)
-			req.getRequestDispatcher("WEB-INF/html/modify_board.jsp").forward(req, resp);
+			req.getRequestDispatcher("user/modify_board.tiles").forward(req, resp);
 		} else {//아니라면
 			//board_info
 			req.setAttribute("board_info", board);
 			req.setAttribute("msg", "권한이 없습니다");
 
 			//보여줄것
-			req.getRequestDispatcher("WEB-INF/html/board.jsp").forward(req, resp);
+			req.getRequestDispatcher("user/board.tiles").forward(req, resp);
 		}
 
 	}

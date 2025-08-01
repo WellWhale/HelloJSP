@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-<jsp:include page="includes/header.jsp" />
-
 <h3>게시글 작성 register_form.jsp</h3>
 
 <form action='addBoard.do' method='post' enctype="multipart/form-data"><!-- 파일첨부를 위해 수정 -->
@@ -33,6 +30,3 @@
 		
 		</table>
 	</form>
-	
-	
-<jsp:include page="includes/footer.jsp" />

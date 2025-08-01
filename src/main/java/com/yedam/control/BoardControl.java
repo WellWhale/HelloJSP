@@ -28,7 +28,7 @@ public class BoardControl implements Control  {
 		req.setAttribute("page", page);//보던 페이지로 돌아오기 기능을 위해 추가
 
 		//요청재지정
-		req.getRequestDispatcher("WEB-INF/html/board.jsp").forward(req, resp);
+		req.getRequestDispatcher("user/board.tiles").forward(req, resp);
 		
 	}
 

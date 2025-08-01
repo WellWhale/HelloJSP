@@ -47,8 +47,25 @@ public class BoardListControl implements Control {
 	req.setAttribute("searchCondition", sc);
 	req.setAttribute("keyword", kw);
 	
-	//요청재지정, 이 페이지의 정보로 보여줌
-	req.getRequestDispatcher("WEB-INF/html/board_list.jsp").forward(req, resp);
+	HttpSession session = req.getSession();
+	String authority = (String) session.getAttribute("auth");
+	
+	//손님이면 일반사용자 템플릿을 사용
+	if(authority == null) {
+		req.getRequestDispatcher("user/board_list.tiles").forward(req, resp);
+		return;
+	}
+	
+	//권한에 따라 템플릿 적용(일반인, 관리자)
+	if(authority.equals("User")) {
+		//일반인이면 보낼곳
+     	req.getRequestDispatcher("user/board_list.tiles").forward(req, resp);
+	} else if(authority.equals("Admin")) {
+		//관리자면 보낼곳
+     	req.getRequestDispatcher("manager/board_list.tiles").forward(req, resp);
+	}
+	
+	
 		
 	}
 	
