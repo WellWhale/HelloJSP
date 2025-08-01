@@ -13,4 +13,5 @@ public class BoardVO {
 	private String viewCnt;
 	private Date creationDate;
 	private Date lastUpdateDate;
+	private String image;// 파일이름
 }

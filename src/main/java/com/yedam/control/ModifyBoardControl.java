@@ -15,27 +15,26 @@ public class ModifyBoardControl implements Control {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
 
-		// addBoard.do?title=???&writer=???&content=??? 이렇게 값이 넘어옴
-		int bno = Integer.parseInt(req.getParameter("bno"));
+		// bno, title, content 값이 넘어옴, 넘어온 값을 변수에 담음
+		String bno = req.getParameter("bno");
 		String title = req.getParameter("title");
-		String content = req.getParameter("contnet");
+		String content = req.getParameter("content");
+		String page = req.getParameter("page");//보던 페이지로 돌아오기 기능을 위해 추가
 
-		BoardVO board = new BoardVO();// 수정하는기능
-		board.setBoardNo(bno);
-		board.setTitle(title);
-		board.setContent(content);
+		BoardVO param = new BoardVO();// 위 변수들을 한번에 아래에 담기위해 선언
+		param.setBoardNo(Integer.parseInt(bno));
+		param.setTitle(title);
+		param.setContent(content);
 
-		BoardService svc = new BoardServiceImpl();// 수정하는기능
-		int result = svc.updateBoard(board);
-		
-		if (result > 0) {
-            // 수정 성공 → 상세 페이지로
-            resp.sendRedirect("board.do?bno=" + bno);
-        } else {
-            // 수정 실패 → 에러 페이지 혹은 다시 폼
-            resp.sendRedirect("modifyForm.do?bno=" + bno + "&error=fail");
-        }
+		BoardService svc = new BoardServiceImpl();// 수정 성공시 전페이지, 실패시 프린트
+		if (svc.modifyBoard(param)) {
+			// 목록이동
+			resp.sendRedirect("boardList.do?page=" + page);//보던 페이지로 돌아오기 기능을 위해 수정
+		} else {
+			System.out.println("에러 발생");
+		}
 
 	}
 

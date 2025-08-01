@@ -10,6 +10,7 @@
   <!-- 수정하는 기능 - modifyBoard.do -->
   <form action="modifyBoard.do">
     <input type="hidden" value="${board_info.boardNo}" name="bno">
+    <input type="hidden" value="${page}" name="page"><!-- 보던 페이지로 돌아오기 기능을 위해 추가 -->
 	<table class="table">
 	    <tr>
 	        <th>글번호</th>
