@@ -44,6 +44,6 @@ console.log(json);// 즉 배열을 맨 위 문자열로 만들어버림(JSON 문
 // 반복문(forEach)를 사용하여 성별이 Female이고 급여가 6,000이상인 사람을 출력
 members.forEach(function(elem){
 	if(elem.gender == 'Female' && elem.salary >= 6000) {
-		console.log(`${elem.first_name} ${elem.last_name}`);
+		console.log(`성별이 ${elem.gender}이고 급여가 ${elem.salary}인 사람의 이름은 ${elem.first_name} ${elem.last_name} 입니다.`);
 	}
 });
