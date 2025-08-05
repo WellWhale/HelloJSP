@@ -51,3 +51,6 @@
 		</tr>
 	</table>
 </form>
+
+<!-- 댓글기능(한 페이지 내에서 등록하고 삭제하고 수정하고 다 가능해야함) -->
+<script src="js/board.js"></script>

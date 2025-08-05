@@ -20,6 +20,7 @@ import com.yedam.control.LogoutControl;
 import com.yedam.control.ModifyBoardControl;
 import com.yedam.control.ModifyFormControl;
 import com.yedam.control.RegisterControl;
+import com.yedam.control.ReplyListControl;
 import com.yedam.control.SignUpControl;
 import com.yedam.control.signFormControl;
 
@@ -56,7 +57,11 @@ public class FrontController extends HttpServlet {//HttpServlet를 상속받음
 		map.put("/login.do", new LoginControl());//로그인기능
 		map.put("/logout.do", new LogoutControl());//로그아웃기능
 		
+		// 기타
 		map.put("/js.do", new JSControl());
+		
+		// 댓글기능
+		map.put("/replyList.do", new ReplyListControl());// n번째 게시물 -> 댓글목록)
 	}
 	
 	@Override
