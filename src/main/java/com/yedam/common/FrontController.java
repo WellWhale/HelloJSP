@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.control.AddBoardControl;
+import com.yedam.control.AddReplyControl;
 import com.yedam.control.BoardControl;
 import com.yedam.control.BoardListControl;
 import com.yedam.control.JSControl;
@@ -20,6 +21,7 @@ import com.yedam.control.LogoutControl;
 import com.yedam.control.ModifyBoardControl;
 import com.yedam.control.ModifyFormControl;
 import com.yedam.control.RegisterControl;
+import com.yedam.control.RemoveReplyControl;
 import com.yedam.control.ReplyListControl;
 import com.yedam.control.SignUpControl;
 import com.yedam.control.signFormControl;
@@ -62,6 +64,9 @@ public class FrontController extends HttpServlet {//HttpServlet를 상속받음
 		
 		// 댓글기능
 		map.put("/replyList.do", new ReplyListControl());// n번째 게시물 -> 댓글목록)
+		map.put("/removeReply.do", new RemoveReplyControl());// 댓글삭제 기능
+		map.put("/addReply.do", new AddReplyControl());// 댓글등록 기능
+		
 	}
 	
 	@Override

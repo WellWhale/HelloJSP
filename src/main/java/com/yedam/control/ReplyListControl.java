@@ -23,8 +23,10 @@ public class ReplyListControl implements Control {
 		// 셋팅
 		resp.setContentType("text/json;charset=utf-8");
 		String bno = req.getParameter("bno");
+		String page = req.getParameter("page");
+		
 		ReplyService svc = new ReplyServiceImpl();
-		List<ReplyVO> list = svc.replyList(Integer.parseInt(bno));
+		List<ReplyVO> list = svc.replyList(Integer.parseInt(bno), Integer.parseInt(page));
 		
 		// mvn repository 들어가서 gson 검색해서 라이브러리 가져왔음 무슨 기능인진 검색 활용
 		// pom.xml 에 내용은 들어있어서 따로 다운받을건 없음
