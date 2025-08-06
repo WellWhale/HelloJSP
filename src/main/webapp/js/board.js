@@ -42,7 +42,7 @@ function showReplyList() {
 
 	document.querySelectorAll('div.content>ul>li')//기존 목록을 지우고 새로 목록을 생성
 		.forEach(function(elem, idx) {
-			if (idx >= 2) {
+			if (idx > 0) {
 				elem.remove();
 			}
 		});

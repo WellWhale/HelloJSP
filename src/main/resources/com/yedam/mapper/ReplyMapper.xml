@@ -17,7 +17,7 @@
 	
 	<delete id="deleteReply" parameterType="int">
 		delete from tbl_reply
-		where reply_no = #{relpyNo}
+		where reply_no = #{replyNo}
 	</delete>
 	
 	<insert id="insertReply" parameterType="com.yedam.vo.ReplyVO">
