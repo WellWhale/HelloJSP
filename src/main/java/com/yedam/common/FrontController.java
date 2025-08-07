@@ -14,6 +14,8 @@ import com.yedam.control.AddBoardControl;
 import com.yedam.control.AddReplyControl;
 import com.yedam.control.BoardControl;
 import com.yedam.control.BoardListControl;
+import com.yedam.control.ChartControl;
+import com.yedam.control.EventControl;
 import com.yedam.control.JSControl;
 import com.yedam.control.LoginControl;
 import com.yedam.control.LoginFormControl;
@@ -24,6 +26,7 @@ import com.yedam.control.RegisterControl;
 import com.yedam.control.RemoveReplyControl;
 import com.yedam.control.ReplyListControl;
 import com.yedam.control.SignUpControl;
+import com.yedam.control.TotalCntControl;
 import com.yedam.control.signFormControl;
 
 
@@ -66,7 +69,13 @@ public class FrontController extends HttpServlet {//HttpServlet를 상속받음
 		map.put("/replyList.do", new ReplyListControl());// n번째 게시물 -> 댓글목록)
 		map.put("/removeReply.do", new RemoveReplyControl());// 댓글삭제 기능
 		map.put("/addReply.do", new AddReplyControl());// 댓글등록 기능
+		map.put("/totalReply.do", new TotalCntControl());// 댓글전체건수파악 bno-> {"totalCnt": n}
 		
+		// 그래프
+		map.put("/chartData.do", new ChartControl());
+		
+		// 이벤트
+		map.put("/eventList.do", new EventControl());// 이벤트 목록
 	}
 	
 	@Override

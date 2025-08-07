@@ -95,6 +95,7 @@
       <li>
         <span class="col-sm-2">글번호</span><span class="col-sm-5">내용</span><span class="col-sm-2">작성자</span><span class="col-sm-2">삭제</span>
       </li>
+      <li><hr></li>
     </ul>
   </div>
 
