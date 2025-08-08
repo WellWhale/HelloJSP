@@ -12,4 +12,14 @@
         FROM tbl_event
 	</select>
 	
+	<insert id="addEvent" parameterType="com.yedam.vo.EventVO">
+		INSERT INTO tbl_event (TITLE, START_DATE, END_DATE)
+        VALUES (#{title}, #{start}, #{end})
+	</insert>
+	
+	<delete id="deleteEvent" parameterType="String">
+	    delete from tbl_event
+		where title = #{title}
+	</delete>
+	
 </mapper>
